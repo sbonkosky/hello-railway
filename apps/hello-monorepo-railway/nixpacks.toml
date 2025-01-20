@@ -1,8 +1,11 @@
-[service]
-name = "frontend"
+[phases.build]
+# Install dependencies and build the Angular app
+cmd = "npm ci && npm run build -- --prod"
 
-[build]
-command = "npm run build:frontend"
+[phases.start]
+# Serve the Angular app using a static file server
+cmd = "npx http-server dist/apps/hello-monorepo-railway -p $PORT"
 
-[start]
-command = "npm run serve:frontend"
+[static]
+# Specify the directory containing the built Angular app
+path = "dist/apps/hello-monorepo-railway"
