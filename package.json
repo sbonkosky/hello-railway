@@ -7,7 +7,7 @@
     "build:frontend": "npx nx build hello-monorepo-railway",
     "build:backend": "npx nx build backend",
     "build": "npm run build:frontend && npm run build:backend",
-    "serve:frontend": "npx nx serve hello-monorepo-railway",
+    "serve:frontend": "npx nx serve hello-monorepo-railway --verbose",
     "serve:backend": "npx nx serve backend"
   },
   "private": true,
