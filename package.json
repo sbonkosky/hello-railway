@@ -4,11 +4,10 @@
   "license": "MIT",
   "scripts": {
     "start": "npx nx run-many --target=serve --projects=hello-monorepo-railway,backend --parallel",
-    "build:frontend": "npx nx build hello-monorepo-railway",
-    "build:backend": "npx nx build backend",
-    "build": "npm run build:frontend && npm run build:backend",
-    "serve:frontend": "npx nx serve hello-monorepo-railway --verbose",
-    "serve:backend": "npx nx serve backend"
+    "build:frontend": "nx build hello-monorepo-railway --prod",
+    "serve:frontend": "npx http-server dist/apps/hello-monorepo-railway -p $PORT",
+    "build:backend": "nx build backend",
+    "serve:backend": "node dist/apps/backend/main.js"
   },
   "private": true,
   "dependencies": {
