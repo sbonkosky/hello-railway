@@ -9,7 +9,6 @@
 
 [phases.install]
     dependsOn = ['setup'] # make sure this phase runs after the default 'setup' phase
-    workingDirectory = "../.." # Navigate to the root directory of the monorepo
     cmds = ['npm ci']
 
 # download caddy from nix
