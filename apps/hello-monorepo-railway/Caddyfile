@@ -8,9 +8,9 @@
         format json # set runtime log format to json mode 
     }
     # server options
-    servers {
-        trusted_proxies static private_ranges 100.0.0.0/8 # trust railway's proxy
-    }
+    #servers {
+    #    trusted_proxies static private_ranges 100.0.0.0/8 # trust railway's proxy
+    #}
 }
 
 # site block, listens on the $PORT environment variable, automatically assigned by railway
