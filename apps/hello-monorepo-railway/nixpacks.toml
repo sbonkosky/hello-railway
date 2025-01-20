@@ -4,6 +4,11 @@
     NPM_CONFIG_UPDATE_NOTIFIER = 'false' # the update notification is relatively useless in a production environment
     NPM_CONFIG_FUND = 'false' # the fund notification is also pretty useless in a production environment
 
+[phases.build]
+    dependsOn = ["setup"]
+    workingDirectory = "../.." # Navigate to the root directory of the monorepo
+    cmds = ["npx nx build hello-monorepo-railway --prod"]
+
 # download caddy from nix
 [phases.caddy]
     dependsOn = ['setup'] # make sure this phase runs after the default 'setup' phase
